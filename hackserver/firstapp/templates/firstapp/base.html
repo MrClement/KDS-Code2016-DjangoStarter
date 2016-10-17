@@ -1,0 +1,16 @@
+<!-- This is our base template. We use it in all our other templates. This
+means that we can put all of our styling and JavaScript in just one file and
+make sure that everything looks visiually consistent -->
+
+<html>
+<head>
+  <!--
+  This is our first block, it allows sub-templates to replace this value
+  with one that makes sense for them
+  -->
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  {% block body %}{% endblock %}
+</body>
+</html>

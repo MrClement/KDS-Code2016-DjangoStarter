@@ -1,0 +1,11 @@
+{% extends "firstapp/base.html" %}
+
+{%block title%}ToDo {{todo.id}}{%endblock%}
+
+{%block body%}
+
+<h2>Todo {{todo.id}}</h2>
+<p>What: {{todo.text}}</p>
+<p>Due: {{todo.due_date}}</p>
+
+{%endblock%}

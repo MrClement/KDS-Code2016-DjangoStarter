@@ -1,0 +1,22 @@
+{% extends "firstapp/base.html" %}
+
+{%block title%}New ToDo{%endblock%}
+
+{%block body%}
+
+<h1>Create a new ToDo</h1>
+
+<form action="/firstapp/new/" method="post">
+  {% csrf_token %}
+   {% if extra_message %}
+       <p>{{ extra_message }}</p>
+   {% endif %}
+    {% for field in form.visible_fields %}
+        <p>{{ field.errors }}
+        {{ field.help_text }}
+        {{ field }}</p>
+    {% endfor %}
+<input type="submit" value="Submit" />
+</form>
+
+{%endblock%}

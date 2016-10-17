@@ -1,0 +1,18 @@
+{% extends "firstapp/base.html" %}
+
+{%block title%}ToDos{%endblock%}
+
+{%block body%}
+
+
+<h1>ToDo</h1>
+<!-- Display the provided (from the view) todos-->
+<ul>
+<!-- Django templating generates html on the fly with the data provided by the view
+here we use a for loop to display multiple items in an array -->
+{% for item in todos %}
+    <li><a href="{% url 'detail' item.id %}">{{ item.text }}</a>
+{% endfor %}
+</ul>
+
+{%endblock%}
