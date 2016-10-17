@@ -31,7 +31,7 @@ This means that you can now use the command `pip`, hurrah!
 
 You are now ready to grab your very own copy of this project. If you know how to use git, feel free to clone this repo. If that last sentence didn't make any sense, don't worry. You can just download the .zip of this entire project from that big green button in the upper right like this:
 
-![zip download](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "How to download a zip archive")
+![zip download](https://github.com/MrClement/KDS-Hack2016-DjangoStarter/raw/master/resources/clone.png "How to download a zip archive")
 
 If you downloaded the zip file, unzip it and move it out of your downloads folder. You will be working from that folder for the rest of this project, so keep it accessible.
 
