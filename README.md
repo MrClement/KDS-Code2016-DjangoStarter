@@ -118,4 +118,10 @@ Start changing the code. Break it, improve it, make it your own. Don't forget to
 - If you need to update or create a new model you will find the procedure laid out [here](https://docs.djangoproject.com/en/1.10/intro/tutorial02/) quite useful.
 - There are fairly extensive comments in the code that describe what is happening
  - In python (files that end in .py) comments start with the `#` symbol
- - In HTML  (files that end with .html) comments start with `<!--`
+ - In HTML (files that end with .html) comments start with `<!--`
+- If you change the models in models.py you will need to update the database schema. Django will do this for you and migrate any data as well. You just need to run the following commands:
+```
+python manage.py makemigrations <app name>
+python manage.py sqlmigrate <app name> <migration number> 
+python manage.py migrate
+```

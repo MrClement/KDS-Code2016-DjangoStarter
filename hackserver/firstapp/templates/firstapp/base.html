@@ -9,6 +9,17 @@ make sure that everything looks visiually consistent -->
   with one that makes sense for them
   -->
   <title>{% block title %}{% endblock %}</title>
+
+  {% load static %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'firstapp/style.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'firstapp/jquery-ui.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'firstapp/jquery-ui.structure.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'firstapp/jquery-ui.theme.min.css' %}" />
+  <script src="{% static 'firstapp/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'firstapp/jquery-ui.min.js' %}"></script>
+  <script src="{% static 'firstapp/script.js' %}"></script>
+
 </head>
 <body>
   {% block body %}{% endblock %}

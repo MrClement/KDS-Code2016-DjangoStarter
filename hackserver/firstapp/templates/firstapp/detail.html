@@ -7,5 +7,10 @@
 <h2>Todo {{todo.id}}</h2>
 <p>What: {{todo.text}}</p>
 <p>Due: {{todo.due_date}}</p>
+<form action="/firstapp/{{id}}/" method="post">
+  {% csrf_token %}
+  <p><input type="checkbox" id="done" name="done"></input>
+  <label for="done">Done</label></p>
 
+<input type="submit" value="Submit" />
 {%endblock%}

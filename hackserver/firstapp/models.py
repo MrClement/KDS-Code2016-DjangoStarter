@@ -5,6 +5,14 @@ from django import forms
 
 # Create your models here.
 
+#If you change the models in this fileyou will need to update
+#the database schema. Django will do this for you and migrate
+#any data as well. You just need to run the following commands:
+#  python manage.py makemigrations <app name>
+#  python manage.py sqlmigrate <app name> <migration number>
+#  python manage.py migrate
+
+
 class ToDo(models.Model):
     # Here out ToDo object has some text, a due date, a date created
     # and a completion status
@@ -19,7 +27,7 @@ class ToDo(models.Model):
 # This form lets us create new ToDo objects in our views
 class ToDoForm(forms.ModelForm):
     text = forms.CharField(max_length=1000, widget=forms.TextInput(attrs={'placeholder':'To Do Text'}))
-    due_date = forms.DateField(widget=forms.TextInput(attrs={'placeholder': 'Due Date', 'id':'datepicker'}))
+    due_date = forms.DateField(widget=forms.DateInput(attrs={'placeholder': 'Due Date', 'id':'datepicker'}))
 
     class Meta:
         model = ToDo

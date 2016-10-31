@@ -1,0 +1,25 @@
+body {
+  margin: 0 auto;
+  max-width: 40em;
+  font-family: "Lucida Sans Unicode", sans-serif;
+  line-height: 1.5;
+  padding: 4em 1em;
+  color: #555555;
+}
+
+h2 {
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+h1, h2 {
+  color: #111111;
+}
+
+a {
+  color: #adb9db;
+}
+
+a:visited {
+  color: #dbadd0
+}
