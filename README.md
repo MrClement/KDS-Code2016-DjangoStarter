@@ -1,4 +1,4 @@
-# Kent Denver Hack-a-thon Django Starter Code
+# Kent Denver Code-a-thon Django Starter Code
 
 ## Introduction
 
@@ -16,14 +16,27 @@ You should be able to use the comments to help you understand what the code is d
 
 #### Getting pip
 
-Unfortunately, this repository is not the only thing you need to get started. In order to install Django and any other programs you might need we are going to use **pip**. You will need to install pip by downloading this file: [get-pip.py](https://bootstrap.pypa.io/get-pip.py). Please right click that link and say "Save File As..." Put it in your downloads
+Unfortunately, this repository is not the only thing you need to get started. In order to install Django and any other programs you might need we are going to use **pip**. You will need to install pip by downloading this file: [get-pip.py](https://bootstrap.pypa.io/get-pip.py). Please right click that link and say "Save Link As..." Put it in your **downloads folder**.
 
-You will then run that file by using Terminal (OSX) or Command Prompt (Windows) to run these commands:
+You will then run that file by using Terminal (OSX) or Command Prompt (Windows). To launch these programs do the following:
+ - **On Windows**: Hit the windows key and type "Command Prompt"
+ - **On OSX**: Use spotlight (the magnifying glass) to find "Terminal"
 
+Then run these commands:
+
+**OSX**
+```
+cd Downloads
+sudo -H python get-pip.py
+```
+On OSX, you will need to type your computer password at the prompt (no characters will show, but it is working).
+
+**Windows**
 ```
 cd Downloads
 python get-pip.py
 ```
+
 
 This means that you can now use the command `pip`, hurrah!
 
@@ -31,14 +44,21 @@ This means that you can now use the command `pip`, hurrah!
 
 You are now ready to grab your very own copy of this project. If you know how to use git, feel free to clone this repo. If that last sentence didn't make any sense, don't worry. You can just download the .zip of this entire project from that big green button in the upper right like this:
 
-![zip download](https://github.com/MrClement/KDS-Hack2016-DjangoStarter/raw/master/resources/clone.png "How to download a zip archive")
+![zip download](https://github.com/MrClement/KDS-Code2016-DjangoStarter/raw/master/resources/clone.png "How to download a zip archive")
 
 If you downloaded the zip file, unzip it and move it out of your downloads folder. You will be working from that folder for the rest of this project, so keep it accessible.
 
 #### Installing requirements
 
 You now need to install the requirements for this project. It is simple now that you have `pip`. In terminal (or command prompt) run the command:
-```bash
+
+**OSX**
+```
+sudo -H pip install django
+```
+
+**Windows**
+```
 pip install django
 ```
 
@@ -53,41 +73,72 @@ This command asks your computer what version of Django it has installed, it shou
 
 #### A quick overview
 
-You should now have a folder somewhere on your computer called **KDS-Hack2016-DjangoStarter**. Inside it there are the following files and folders:
+You should now have a folder somewhere on your computer called **KDS-Code2016-DjangoStarter**. Inside it there are the following files and folders (this is not a complete list):
 
 ```
 ├── README.md
-└── hackserver
-    ├── firstapp
-    │   ├── __init__.py
-    │   ├── admin.py
-    │   ├── apps.py
-    │   ├── migrations
-    │   │   └── __init__.py
-    │   ├── models.py
-    │   ├── tests.py
-    │   └── views.py
-    ├── hackserver
+├── resources
+│   └── clone.png
+└── server
+    ├── db.sqlite3
+    ├── firstapp <-- This is the important folder
     │   ├── __init__.py
     │   ├── __init__.pyc
-    │   ├── settings.py
-    │   ├── settings.pyc
+    │   ├── admin.py
+    │   ├── admin.pyc
+    │   ├── apps.py
+    │   ├── apps.pyc
+    │   ├── migrations
+    │   ├── models.py
+    │   ├── models.pyc
+    │   ├── static
+    │   │   └── firstapp
+    │   │       ├── script.js
+    │   │       └── style.css
+    │   ├── templates
+    │   │   └── firstapp
+    │   │       ├── base.html
+    │   │       ├── detail.html
+    │   │       ├── index.html
+    │   │       └── new.html
+    │   ├── tests.py
     │   ├── urls.py
-    │   └── wsgi.py
-    └── manage.py
+    │   ├── urls.pyc
+    │   ├── views.py
+    │   └── views.pyc
+    ├── manage.py
+    └── server
+        ├── __init__.py
+        ├── __init__.pyc
+        ├── settings.py
+        ├── settings.pyc
+        ├── urls.py
+        ├── urls.pyc
+        ├── wsgi.py
+        └── wsgi.pyc
 ```
 
-This might seem a little overwhelming, but **to start you will only need to worry about the folder firstapp**. This is because Django is designed to run multiple *apps* with the same *project*. In this example our project is called hackserver and our app is called firstapp:
+This might seem a little overwhelming, but **to start you will only need to worry about the folder firstapp**. This is because Django is designed to run multiple *apps* with the same *project*. In this example our project is called server and our app is called firstapp:
 
 ```
 ├── __init__.py
 ├── admin.py
 ├── apps.py
 ├── migrations
-│   └── __init__.py
-├── models.py
+├── models.py <-- Database models go here
+├── static <-- CSS and JS go here
+│   └── firstapp
+│       ├── script.js
+│       └── style.css
+├── templates <-- HTML templates go here
+│   └── firstapp
+│       ├── base.html
+│       ├── detail.html
+│       ├── index.html
+│       └── new.html
 ├── tests.py
-└── views.py
+├── urls.py <-- URL routing is done here
+├── views.py
 ```
 
 #### The Model-View-Controller (MVC) framework
@@ -122,6 +173,6 @@ Start changing the code. Break it, improve it, make it your own. Don't forget to
 - If you change the models in models.py you will need to update the database schema. Django will do this for you and migrate any data as well. You just need to run the following commands:
 ```
 python manage.py makemigrations <app name>
-python manage.py sqlmigrate <app name> <migration number> 
+python manage.py sqlmigrate <app name> <migration number>
 python manage.py migrate
 ```
